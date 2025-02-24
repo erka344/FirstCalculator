@@ -8,5 +8,11 @@ namespace calculator
 {
     class MemoryItem
     {
+        public double Value { get; set; }
+
+        public MemoryItem(double value)
+        {
+            Value = value;
+        }
     }
 }

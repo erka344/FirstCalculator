@@ -8,6 +8,7 @@ namespace calculator
 {
     class Calculator :Acalculator, IOperation
     {
+        public Calculator() { }
         public void Add(double n)
         {
             Result += n;
