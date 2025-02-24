@@ -9,9 +9,17 @@ class Program
         var calculator = new Calculator();
         Memory? memory = null;
 
+        Console.Write("Enter the starting number: ");
+        if (!double.TryParse(Console.ReadLine(), out double number))
+        {
+            Console.WriteLine("Invalid number. Exiting.");
+            return;
+        }
+        calculator.Add(number);
+
         while (true)
         {
-            Console.WriteLine("Choose an operation: add, minus, memory, memory-all or exit");
+            Console.WriteLine("Choose an operation: add, minus, memory, memory-all, or exit");
             var operation = Console.ReadLine()?.ToLower();
 
             if (operation == "exit")
@@ -40,6 +48,7 @@ class Program
                 }
                 continue;
             }
+
             if (operation == "memory-all")
             {
                 if (memory != null)
@@ -66,7 +75,7 @@ class Program
             }
 
             Console.Write("Enter a number: ");
-            if (double.TryParse(Console.ReadLine(), out double number))
+            if (double.TryParse(Console.ReadLine(), out number))
             {
                 if (operation == "add")
                 {
