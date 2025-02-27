@@ -8,7 +8,7 @@ namespace calculator
 {
     class Memory
     {
-        private readonly List<MemoryItem> items = new List<MemoryItem> ();
+        public readonly List<MemoryItem> items = new List<MemoryItem> ();
         public void Tuuh(double value)
         {
             items.Add(new MemoryItem (value));

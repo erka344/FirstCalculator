@@ -17,5 +17,6 @@ namespace calculator
         {
             Result -= n;
         }
+        // Programiin main dotorh memory-iig arilgaj calculator dotor memory-iig bagtaan
     }
 }

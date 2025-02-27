@@ -49,6 +49,13 @@ class Program
                 continue;
             }
 
+            //if (operation == "memory-choose")
+            //{
+            //    Console.WriteLine("Enter the number of the memory item you want to use:");
+            //    double.TryParse(Console.ReadLine(), out double num);
+            //    if (memory.items > num)
+            //}
+
             if (operation == "memory-all")
             {
                 if (memory != null)
