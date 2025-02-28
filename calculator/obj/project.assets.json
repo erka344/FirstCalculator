@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "CalculatorLibrary1/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/CalculatorLibrary1.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CalculatorLibrary1.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CalculatorLibrary1/1.0.0": {
+      "type": "project",
+      "path": "../CalculatorLibrary1/CalculatorLibrary1.csproj",
+      "msbuildProject": "../CalculatorLibrary1/CalculatorLibrary1.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "CalculatorLibrary1 >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\erka\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\erka\\source\\repos\\calculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj": {
+              "projectPath": "C:\\Users\\erka\\source\\repos\\calculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

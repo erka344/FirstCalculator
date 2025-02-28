@@ -23,6 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CalculatorLibrary1\CalculatorLibrary1.csproj" />
+    <ProjectReference Include="..\calculator\calculator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 

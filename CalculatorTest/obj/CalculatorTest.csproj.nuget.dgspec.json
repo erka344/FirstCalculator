@@ -189,7 +189,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\erka\\source\\repos\\calculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj": {
+                "projectPath": "C:\\Users\\erka\\source\\repos\\calculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

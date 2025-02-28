@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace calculator
+namespace CalculatorLibrary.memory
 {
-    class MemoryItem
+    public class MemoryItem
     {
         public double Value { get; set; }
 

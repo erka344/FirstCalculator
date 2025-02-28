@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace calculator
+namespace CalculatorLibrary.memory
 {
-    class Memory
+    public class Memory
     {
         public readonly List<MemoryItem> items = new List<MemoryItem> ();
         public void Tuuh(double value)

@@ -1,13 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
-using calculator;
+using CalculatorLibrary ;
 
-class Program
+
+public class Program
 {
     static void Main()
     {
-        var calculator = new Calculator();
-        Memory? memory = null;
+        var calculator = new Calculator(); // Memory одоо Calculator дотор байна
 
         Console.Write("Enter the starting number: ");
         if (!double.TryParse(Console.ReadLine(), out double number))
@@ -29,54 +29,33 @@ class Program
 
             if (operation == "memory")
             {
-                if (memory != null)
+                var lastItem = calculator.GetLastMemoryItem();
+                if (lastItem != null)
                 {
-                    var lastItem = memory.GetLastItem();
-                    if (lastItem != null)
-                    {
-                        Console.WriteLine("Last memory item:");
-                        Console.WriteLine($"Value: {lastItem.Value}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No items in memory.");
-                    }
+                    Console.WriteLine("Last memory item:");
+                    Console.WriteLine($"Value: {lastItem.Value}");
                 }
                 else
                 {
-                    Console.WriteLine("Memory is not being used.");
+                    Console.WriteLine("No items in memory.");
                 }
                 continue;
             }
 
-            //if (operation == "memory-choose")
-            //{
-            //    Console.WriteLine("Enter the number of the memory item you want to use:");
-            //    double.TryParse(Console.ReadLine(), out double num);
-            //    if (memory.items > num)
-            //}
-
             if (operation == "memory-all")
             {
-                if (memory != null)
+                var allItems = calculator.GetAllMemoryItems();
+                if (allItems.Any())
                 {
-                    var allItems = memory.GetAllItems();
-                    if (allItems.Any())
+                    Console.WriteLine("All memory items:");
+                    foreach (var item in allItems)
                     {
-                        Console.WriteLine("All memory items:");
-                        foreach (var item in allItems)
-                        {
-                            Console.WriteLine($"Value: {item.Value}");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("No items in memory.");
+                        Console.WriteLine($"Value: {item.Value}");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Memory is not being used.");
+                    Console.WriteLine("No items in memory.");
                 }
                 continue;
             }
@@ -99,12 +78,7 @@ class Program
                 }
 
                 Console.WriteLine($"Result: {calculator.Result}");
-
-                if (memory == null)
-                {
-                    memory = new Memory();
-                }
-                memory.Tuuh(calculator.Result);
+                
             }
             else
             {

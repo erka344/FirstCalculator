@@ -1,0 +1,12 @@
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\obj\Debug\net8.0\CalculatorLibrary1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\obj\Debug\net8.0\CalculatorLibrary1.AssemblyInfoInputs.cache
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\obj\Debug\net8.0\CalculatorLibrary1.AssemblyInfo.cs
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\obj\Debug\net8.0\CalculatorLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\obj\Debug\net8.0\CalculatorLibrary1.sourcelink.json
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\bin\Debug\net8.0\CalculatorLibrary1.deps.json
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\bin\Debug\net8.0\CalculatorLibrary1.dll
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\bin\Debug\net8.0\CalculatorLibrary1.pdb
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\obj\Debug\net8.0\CalculatorLibrary1.dll
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\obj\Debug\net8.0\refint\CalculatorLibrary1.dll
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\obj\Debug\net8.0\CalculatorLibrary1.pdb
+C:\Users\erka\source\repos\calculator\CalculatorLibrary1\obj\Debug\net8.0\ref\CalculatorLibrary1.dll
