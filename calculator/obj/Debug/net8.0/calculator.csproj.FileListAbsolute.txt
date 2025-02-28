@@ -17,3 +17,7 @@ C:\Users\erka\source\repos\calculator\calculator\obj\Debug\net8.0\calculator.csp
 C:\Users\erka\source\repos\calculator\calculator\bin\Debug\net8.0\CalculatorLibrary1.dll
 C:\Users\erka\source\repos\calculator\calculator\bin\Debug\net8.0\CalculatorLibrary1.pdb
 C:\Users\erka\source\repos\calculator\calculator\obj\Debug\net8.0\calculator.csproj.Up2Date
+C:\Users\erka\source\repos\calculator\calculator\bin\Debug\net8.0\xunit.abstractions.dll
+C:\Users\erka\source\repos\calculator\calculator\bin\Debug\net8.0\xunit.assert.dll
+C:\Users\erka\source\repos\calculator\calculator\bin\Debug\net8.0\xunit.core.dll
+C:\Users\erka\source\repos\calculator\calculator\bin\Debug\net8.0\xunit.execution.dotnet.dll

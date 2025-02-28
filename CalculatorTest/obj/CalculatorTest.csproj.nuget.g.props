@@ -25,6 +25,7 @@
     <Import Project="$(NuGetPackageRoot)microsoft.testing.extensions.codecoverage\17.12.6\buildTransitive\net6.0\Microsoft.Testing.Extensions.CodeCoverage.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.extensions.codecoverage\17.12.6\buildTransitive\net6.0\Microsoft.Testing.Extensions.CodeCoverage.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\erka\.nuget\packages\xunit.analyzers\1.18.0</Pkgxunit_analyzers>
     <PkgMSTest_Analyzers Condition=" '$(PkgMSTest_Analyzers)' == '' ">C:\Users\erka\.nuget\packages\mstest.analyzers\3.6.4</PkgMSTest_Analyzers>
   </PropertyGroup>
 </Project>

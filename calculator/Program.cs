@@ -2,10 +2,10 @@
 // Console.WriteLine("Hello, World!");
 using CalculatorLibrary ;
 
-
+namespace program;
 public class Program
 {
-    static void Main()
+    public static void Main()
     {
         var calculator = new Calculator(); // Memory одоо Calculator дотор байна
 
