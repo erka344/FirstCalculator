@@ -19,7 +19,7 @@ public class Program
 
         while (true)
         {
-            Console.WriteLine("Choose an operation: add, minus, memory, memory-all, or exit");
+            Console.WriteLine("Choose an operation: add, minus, MS, C, memory, History, take memory or exit");
             var operation = Console.ReadLine()?.ToLower();
 
             if (operation == "exit")
@@ -42,7 +42,17 @@ public class Program
                 continue;
             }
 
-            if (operation == "memory-all")
+            if (operation == "MS")// ur dung hadgalna
+            {
+                calculator.Save();
+            }
+
+            if (operation == "C")// ur dung dahin 0 bolgoh
+            {
+                calculator.resultClear();
+            }
+
+            if (operation == "History")
             {
                 var allItems = calculator.GetAllMemoryItems();
                 if (allItems.Any())
