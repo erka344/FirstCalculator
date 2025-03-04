@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erka\\source\\repos\\calculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj": {}
+    "C:\\Users\\erka\\Source\\Repos\\FirstCalculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erka\\source\\repos\\calculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj": {
+    "C:\\Users\\erka\\Source\\Repos\\FirstCalculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erka\\source\\repos\\calculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj",
+        "projectUniqueName": "C:\\Users\\erka\\Source\\Repos\\FirstCalculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj",
         "projectName": "CalculatorLibrary1",
-        "projectPath": "C:\\Users\\erka\\source\\repos\\calculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj",
+        "projectPath": "C:\\Users\\erka\\Source\\Repos\\FirstCalculator\\CalculatorLibrary1\\CalculatorLibrary1.csproj",
         "packagesPath": "C:\\Users\\erka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erka\\source\\repos\\calculator\\CalculatorLibrary1\\obj\\",
+        "outputPath": "C:\\Users\\erka\\Source\\Repos\\FirstCalculator\\CalculatorLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

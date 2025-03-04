@@ -19,7 +19,7 @@ public class Program
 
         while (true)
         {
-            Console.WriteLine("Choose an operation: add, minus, MS, C, memory, History, take memory or exit");
+            Console.WriteLine("Choose an operation: add, minus, MS, C, History, memory or exit");
             var operation = Console.ReadLine()?.ToLower();
 
             if (operation == "exit")
@@ -27,32 +27,78 @@ public class Program
                 break;
             }
 
+            if (operation == "ms")// ur dung hadgalna
+            {
+                calculator.Save();
+                Console.WriteLine("result is saved");
+                continue;
+            }
+
+            if (operation == "c")// ur dung dahin 0 bolgoh
+            {
+                calculator.resultClear();
+                Console.WriteLine("result is cleaned");
+                continue;
+            }
             if (operation == "memory")
             {
-                var lastItem = calculator.GetLastMemoryItem();
-                if (lastItem != null)
+                Console.Write("Enter memory slot number: ");
+                if (int.TryParse(Console.ReadLine(), out int n))
                 {
-                    Console.WriteLine("Last memory item:");
-                    Console.WriteLine($"Value: {lastItem.Value}");
+                    calculator.memoryShow(n);
+                    while (true)
+                    {
+                        Console.WriteLine("Choose a memory operation: add, minus, MC, or back");
+                        var memoryOperation = Console.ReadLine()?.ToLower();
+
+                        if (memoryOperation == "add")
+                        {
+                            Console.Write("Enter a number: ");
+                            if (double.TryParse(Console.ReadLine(), out double num1))
+                            {
+                                calculator.memoryAdd(n, num1);
+                                calculator.memoryShow(n);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid number.");
+                            }
+                        }
+                        else if (memoryOperation == "minus")
+                        {
+                            Console.Write("Enter a number: ");
+                            if (double.TryParse(Console.ReadLine(), out double num1))
+                            {
+                                calculator.memoryMinus(n, num1);
+                                calculator.memoryShow(n);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid number.");
+                            }
+                        }
+                        else if (memoryOperation == "mc")
+                        {
+                            calculator.memoryClear(n);
+                        }
+                        else if (memoryOperation == "back")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid memory operation.");
+                        }
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("No items in memory.");
+                    Console.WriteLine("Invalid memory slot number.");
                 }
                 continue;
             }
 
-            if (operation == "MS")// ur dung hadgalna
-            {
-                calculator.Save();
-            }
-
-            if (operation == "C")// ur dung dahin 0 bolgoh
-            {
-                calculator.resultClear();
-            }
-
-            if (operation == "History")
+            if (operation == "history")
             {
                 var allItems = calculator.GetAllMemoryItems();
                 if (allItems.Any())

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dqshraJ1aOM=",
+  "dgSpecHash": "GrOk84sUR0c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\erka\\source\\repos\\calculator\\calculator\\calculator.csproj",
+  "projectFilePath": "C:\\Users\\erka\\Source\\Repos\\FirstCalculator\\calculator\\calculator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erka\\.nuget\\packages\\xunit\\2.9.3\\xunit.2.9.3.nupkg.sha512",
     "C:\\Users\\erka\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",

@@ -14,15 +14,15 @@ namespace CalculatorLibrary.memory
             items.Add(new MemoryItem (value));
             // list-ruu tuuh nemeh
         }
-
+        
         public IEnumerable<MemoryItem> GetAllItems()
         {
             return items;
         }
-        public MemoryItem? GetLastItem()
-        // IEnumerable ni C#-nii interface foreach davtaltiig heregledeg
-        {
-            return items.Count> 0 ? items[^1] : null;
-        }
+        //public MemoryItem? GetLastItem()
+        //// IEnumerable ni C#-nii interface foreach davtaltiig heregledeg
+        //{
+        //    return items.Count> 0 ? items[^1] : null;
+        //}
     }
 }
