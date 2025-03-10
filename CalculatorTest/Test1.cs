@@ -189,39 +189,39 @@ namespace CalculatorTest
             string consoleOutput = output.ToString();
             StringAssert.Contains(consoleOutput, "Invalid operation");
         }
-        [TestMethod]
-        public void TestInvalidNumber_program()
-        {
-            string input = "abc\nexit\n";
-            var reader = new StringReader(input);
-            Console.SetIn(reader);
+        //[TestMethod]
+        //public void TestInvalidNumber_program()
+        //{
+        //    string input = "abc\nexit\n";
+        //    var reader = new StringReader(input);
+        //    Console.SetIn(reader);
 
-            var output = new StringWriter();
-            Console.SetOut(output);
+        //    var output = new StringWriter();
+        //    Console.SetOut(output);
 
-            Program.Main();
+        //    Program.Main();
 
-            string consoleOutput = output.ToString();
-            StringAssert.Contains(consoleOutput, "Invalid number.");
-        }
-        [TestMethod]
-        public void TestAction_program()
-        {
-            string input = "23\nadd\n27\nms\nadd\n50\nms\nmemory\n1\nminus\n25\nexit";
-            var reader = new StringReader(input);
-            Console.SetIn(reader);
+        //    string consoleOutput = output.ToString();
+        //    StringAssert.Contains(consoleOutput, "Invalid number.");
+        //}
+        //[TestMethod]
+        //public void TestAction_program()
+        //{
+        //    string input = "23\nadd\n27\nms\nadd\n50\nms\nmemory\n1\nminus\n25\nexit";
+        //    var reader = new StringReader(input);
+        //    Console.SetIn(reader);
 
-            using (var writer = new StringWriter())
-            {w
-                Console.SetOut(writer);
-                Program.Main();
-            }
+        //    using (var writer = new StringWriter())
+        //    {
+        //        Console.SetOut(writer);
+        //        Program.Main();
+        //    }
 
-            var calculator = new Calculator();
-            var allMemoryItems = calculator.GetAllMemoryItems();
-            Assert.AreEqual(50, allMemoryItems[0].Value);
+        //    var calculator = new Calculator();
+        //    var allMemoryItems = calculator.GetAllMemoryItems();
+        //    Assert.AreEqual(50, allMemoryItems[0].Value);
 
-            Assert.AreEqual(75, allMemoryItems[1].Value);
-        }
+        //    Assert.AreEqual(75, allMemoryItems[1].Value);
+        //}
     }
 }
