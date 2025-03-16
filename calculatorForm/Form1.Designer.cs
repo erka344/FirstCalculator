@@ -45,7 +45,10 @@
             button14 = new Button();
             tentsuu = new Button();
             hadgalah = new Button();
-            panel1 = new Panel();
+            memoryHasah = new Button();
+            memoryNemeh = new Button();
+            memoryClear = new Button();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
             // textBox1
@@ -185,6 +188,7 @@
             button13.TabIndex = 13;
             button13.Text = ".";
             button13.UseVisualStyleBackColor = true;
+            button13.Click += button1_Click;
             // 
             // button14
             // 
@@ -194,6 +198,7 @@
             button14.TabIndex = 14;
             button14.Text = "0";
             button14.UseVisualStyleBackColor = true;
+            button14.Click += button1_Click;
             // 
             // tentsuu
             // 
@@ -215,19 +220,55 @@
             hadgalah.UseVisualStyleBackColor = true;
             hadgalah.Click += hadgalah_Click;
             // 
-            // panel1
+            // memoryHasah
             // 
-            panel1.Location = new Point(509, 21);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(263, 449);
-            panel1.TabIndex = 17;
+            memoryHasah.Location = new Point(12, 487);
+            memoryHasah.Name = "memoryHasah";
+            memoryHasah.Size = new Size(96, 82);
+            memoryHasah.TabIndex = 18;
+            memoryHasah.Text = "M-";
+            memoryHasah.UseMnemonic = false;
+            memoryHasah.UseVisualStyleBackColor = true;
+            memoryHasah.Click += memoryHasah_Click;
+            // 
+            // memoryNemeh
+            // 
+            memoryNemeh.Location = new Point(132, 487);
+            memoryNemeh.Name = "memoryNemeh";
+            memoryNemeh.Size = new Size(96, 82);
+            memoryNemeh.TabIndex = 19;
+            memoryNemeh.Text = "M+";
+            memoryNemeh.UseVisualStyleBackColor = true;
+            memoryNemeh.Click += memoryNemeh_Click;
+            // 
+            // memoryClear
+            // 
+            memoryClear.Location = new Point(251, 487);
+            memoryClear.Name = "memoryClear";
+            memoryClear.Size = new Size(96, 82);
+            memoryClear.TabIndex = 20;
+            memoryClear.Text = "MC";
+            memoryClear.UseVisualStyleBackColor = true;
+            memoryClear.Click += memoryClear_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(493, 12);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(269, 524);
+            listBox1.TabIndex = 21;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 581);
-            Controls.Add(panel1);
+            Controls.Add(listBox1);
+            Controls.Add(memoryClear);
+            Controls.Add(memoryNemeh);
+            Controls.Add(memoryHasah);
             Controls.Add(hadgalah);
             Controls.Add(tentsuu);
             Controls.Add(button14);
@@ -271,6 +312,9 @@
         private Button button14;
         private Button tentsuu;
         private Button hadgalah;
-        private Panel panel1;
+        private Button memoryHasah;
+        private Button memoryNemeh;
+        private Button memoryClear;
+        private ListBox listBox1;
     }
 }
