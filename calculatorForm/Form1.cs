@@ -4,9 +4,7 @@ namespace calculatorForm
 {
     public partial class Form1 : Form
     {
-        private Calculator calculator;
-        private List<double> savedNumbers = new List<double>();
-        private ListBox listBoxSavedNumbers;
+        private Calculator calculator;    
         private string operationValue = "";
         private double firstNum = double.NaN;
         public Form1()
@@ -15,16 +13,7 @@ namespace calculatorForm
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // 1-9 button
+        // 1-9 and . button
         private void button1_Click(object sender, EventArgs e)
         {
             if (sender is Button button)
@@ -109,17 +98,6 @@ namespace calculatorForm
             listBox1.Items.Add(textBox1.Text);
         }
 
-        // listBox
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (double.TryParse(textBox1.Text, out double number))
-            //{
-            //    savedNumbers.Add(number); // Жагсаалтад нэмэх
-            //    listBoxSavedNumbers.Items.Add(number); // ListBox-д нэмэх
-            //    textBox1.Clear();
-            //}
-        }
-
         // MC
         private void memoryClear_Click(object sender, EventArgs e)
         {
@@ -148,6 +126,26 @@ namespace calculatorForm
                 listBox1.Items.RemoveAt(index);
                 listBox1.Items.Insert(index, result.ToString());
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        // listBox
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (double.TryParse(textBox1.Text, out double number))
+            //{
+            //    savedNumbers.Add(number); // Жагсаалтад нэмэх
+            //    listBoxSavedNumbers.Items.Add(number); // ListBox-д нэмэх
+            //    textBox1.Clear();
+            //}
         }
     }
 }

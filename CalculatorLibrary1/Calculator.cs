@@ -12,7 +12,7 @@ namespace CalculatorLibrary
 {
     public class Calculator : Acalculator, IOperation
     {
-        private Memory memory;
+        public Memory memory { get; set; }
         public Calculator()
         {
             // Programiin main dotorh memory-iig arilgaj calculator dotor memory-iig bagtaan

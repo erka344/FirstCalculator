@@ -14,6 +14,10 @@ namespace CalculatorLibrary.memory
             items.Add(new MemoryItem (value));
             // list-ruu tuuh nemeh
         }
+        public void clearItem(MemoryItem item)
+        {
+            items.Remove(item);
+        }
         
         public IEnumerable<MemoryItem> GetAllItems()
         {
