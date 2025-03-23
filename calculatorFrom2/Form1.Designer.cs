@@ -228,7 +228,7 @@
             // 
             // history
             // 
-            history.Location = new Point(413, 14);
+            history.Location = new Point(412, 12);
             history.Name = "history";
             history.Size = new Size(263, 420);
             history.TabIndex = 18;

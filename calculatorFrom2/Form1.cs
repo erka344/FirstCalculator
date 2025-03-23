@@ -7,7 +7,7 @@ namespace calculatorFrom2
     {
         private Calculator calculator;
         private string operStatus = "";
-        private bool firstNum;
+
         public Form1()
         {
             calculator = new Calculator();
@@ -129,6 +129,7 @@ namespace calculatorFrom2
                 Size = new Size(280, 50),
                 BackColor = Color.White,
             };
+            
             Label label = new Label
             {
                 Text = memoryItem.Value.ToString(),
@@ -168,11 +169,13 @@ namespace calculatorFrom2
                     calculator.memory.clearItem(memoryItem);
                     
                 }
+
+                UpdatePanellocation();
             });
 
-            buttonMClear.Location = new Point(120, 10);
-            buttonMPlus.Location = new Point(170, 10);
-            buttonMMinus.Location = new Point(220, 10);
+            buttonMClear.Location = new Point(110, 10);
+            buttonMPlus.Location = new Point(160, 10);
+            buttonMMinus.Location = new Point(210, 10);
 
             panelItem.Controls.Add(label);
             panelItem.Controls.Add(buttonMClear);
@@ -182,11 +185,9 @@ namespace calculatorFrom2
             history.Controls.Add(panelItem);
             history.Controls.SetChildIndex(panelItem, 0);
 
-            
+            UpdatePanellocation();
         }
 
-
-        
         private Button CreateButton(string text, Action onClick)
         {
             Button btn = new Button
@@ -199,5 +200,14 @@ namespace calculatorFrom2
             return btn;
         }
 
+        private void UpdatePanellocation()
+        {
+            int y = 10;
+            foreach (Control control in history.Controls)
+            {
+                control.Location = new Point(10, y);
+                y += control.Height + 5;
+            }
+        }
     }
 }

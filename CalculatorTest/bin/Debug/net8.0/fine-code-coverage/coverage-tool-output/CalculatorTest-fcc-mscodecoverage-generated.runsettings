@@ -12,9 +12,7 @@
           <CodeCoverage>
             <ModulePaths>
               <Exclude></Exclude>
-              <Include>
-                <ModulePath>C:\\Users\\erka\\Source\\Repos\\FirstCalculator\\CalculatorTest\\bin\\Debug\\net8.0\\CalculatorTest.dll</ModulePath>
-              </Include>
+              <Include></Include>
             </ModulePaths>
             <Functions>
               <Exclude></Exclude>

@@ -8,13 +8,13 @@ using program;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using Microsoft.VisualStudio.TestPlatform.Utilities;
 using CalculatorLibrary.memory;
+//using CalculatorLibrary.
 
 namespace CalculatorTest
 {
     [TestClass]
-    public sealed class TestCalculator
+    public sealed class CalculatorTest
     {
-        private object consoleOutput;
 
         [TestMethod]
         public void TestAdd_calculator()
@@ -122,6 +122,35 @@ namespace CalculatorTest
             var allMemoryItems = calculator.GetAllMemoryItems();
             Assert.AreEqual(10, allMemoryItems[1].Value);
         }
+        
+    }
+
+    [TestClass]
+    public sealed class MemoryTest
+    {
+        [TestMethod]
+        public void TestTuuh_Memory()
+        {
+            var memory = new Memory();
+
+            // Act
+            //memory.
+            memory.Tuuh(10.5);
+            memory.Tuuh(20.3);
+
+            // Assert
+            var items = memory.GetAllItems();
+            Assert.AreEqual(2, memory.items.Count);
+            Assert.AreEqual(10.5, memory.items[0].Value);
+            Assert.AreEqual(20.3, memory.items[1].Value);
+        }
+
+        [TestMethod]
+        public void Test_MemoryItem()
+        {
+            var memory = new MemoryItem(23);
+            Assert.AreEqual(23, memory.Value);
+        }
 
         [TestMethod]
         public void TestGetAllMemoryItems_memory()
@@ -136,30 +165,31 @@ namespace CalculatorTest
             var allMemoryItems = calculator.GetAllMemoryItems();
             Assert.AreEqual(3, allMemoryItems.Count);
         }
-        [TestMethod]
-        public void TestTuuh_Memory()
-        {
-            var memory = new Memory();
+    }
 
-            // Act
-            memory.Tuuh(10.5);
-            memory.Tuuh(20.3);
-
-            // Assert
-            var items = memory.GetAllItems();
-            Assert.AreEqual(2, memory.items.Count);
-            Assert.AreEqual(10.5, memory.items[0].Value);
-            Assert.AreEqual(20.3, memory.items[1].Value);
-        }        
+    [TestClass]
+    public sealed class MemoryItemTest
+    {
         [TestMethod]
-        public void Test_MemoryItem()
+        public void Test_Memoryitem()
         {
-            var memory = new MemoryItem(23);
-            Assert.AreEqual(23, memory.Value);
+            var memoryItem = new MemoryItem(34);
+            memoryItem.Add(26);
+            memoryItem.Add(80);
+            Assert.AreEqual(140, memoryItem.Value);
+
+            memoryItem.Minus(250);
+            memoryItem.Minus(memoryItem.Value);
+            Assert.AreEqual(0, memoryItem.Value);
+
         }
+    }
 
+    [TestClass]
+    public sealed class ProgramTest
+    {
         [TestMethod]
-        public void Test_Program()
+        public void TestAdd_Program()
         {
             string input = "10\nadd\n5\nexit\n";
             var reader = new StringReader(input);
@@ -168,16 +198,18 @@ namespace CalculatorTest
             var output = new StringWriter();
             Console.SetOut(output);
 
+            
             Program.Main(); // Run the program
 
             string consoleOutput = output.ToString();
             StringAssert.Contains(consoleOutput, "Enter the starting number:");
             StringAssert.Contains(consoleOutput, "Result: 15");
         }
-        //[TestMethod]
+
+        [TestMethod]
         public void TestInvalidOperation_program()
         {
-            string input = "10\ninvalid\nexit\n";
+            string input = "10\ninvalid\n32\nexit\n";
             var reader = new StringReader(input);
             Console.SetIn(reader);
 
@@ -187,41 +219,26 @@ namespace CalculatorTest
             Program.Main();
 
             string consoleOutput = output.ToString();
-            StringAssert.Contains(consoleOutput, "Invalid operation");
+            StringAssert.Contains(consoleOutput, "Invalid operation.");
         }
-        //[TestMethod]
-        //public void TestInvalidNumber_program()
-        //{
-        //    string input = "abc\nexit\n";
-        //    var reader = new StringReader(input);
-        //    Console.SetIn(reader);
 
-        //    var output = new StringWriter();
-        //    Console.SetOut(output);
+        [TestMethod]
+        public void Test_Main_MemoryOperations()
+        {
+            string input = "10\nms\nmemory\n0\nadd\n5\nback\nexit\n";
+            var reader = new StringReader(input);
+            Console.SetIn(reader);
 
-        //    Program.Main();
+            var output = new StringWriter();
+            Console.SetOut(output);
+           
+            Program.Main();
 
-        //    string consoleOutput = output.ToString();
-        //    StringAssert.Contains(consoleOutput, "Invalid number.");
-        //}
-        //[TestMethod]
-        //public void TestAction_program()
-        //{
-        //    string input = "23\nadd\n27\nms\nadd\n50\nms\nmemory\n1\nminus\n25\nexit";
-        //    var reader = new StringReader(input);
-        //    Console.SetIn(reader);
+            string consoleOutput = output.ToString();
 
-        //    using (var writer = new StringWriter())
-        //    {
-        //        Console.SetOut(writer);
-        //        Program.Main();
-        //    }
-
-        //    var calculator = new Calculator();
-        //    var allMemoryItems = calculator.GetAllMemoryItems();
-        //    Assert.AreEqual(50, allMemoryItems[0].Value);
-
-        //    Assert.AreEqual(75, allMemoryItems[1].Value);
-        //}
+            StringAssert.Contains(consoleOutput, "result is saved");
+            StringAssert.Contains(consoleOutput, "Enter memory slot number:");
+            StringAssert.Contains(consoleOutput, "15"); 
+        }
     }
 }
