@@ -1,4 +1,4 @@
-using CalculatorLibrary;
+﻿using CalculatorLibrary;
 using CalculatorLibrary.memory;
 
 namespace calculatorFrom2
@@ -8,13 +8,18 @@ namespace calculatorFrom2
         private Calculator calculator;
         private string operStatus = "";
 
+        /// <summary>
+        /// Form1-ийн анхны тохиргоо.
+        /// </summary>
         public Form1()
         {
             calculator = new Calculator();
             InitializeComponent();
         }
 
-        // 1-9 and . button
+        /// <summary>
+        /// 1-9 болон "." товчлуур дарагдах үед тоог оруулна.
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             if (sender is Button button)
@@ -23,7 +28,9 @@ namespace calculatorFrom2
             }
         }
 
-        // +
+        /// <summary>
+        /// "+" үйлдэл хийх үед дуудна.
+        /// </summary>
         private void nemeh_Click(object sender, EventArgs e)
         {
             double num = double.Parse(input.Text);
@@ -31,17 +38,14 @@ namespace calculatorFrom2
             {
                 calculator.Result = num;
                 operStatus = "+";
-
-                
-            } else if (operStatus == "+")
+            }
+            else if (operStatus == "+")
             {
                 calculator.Add(num);
-                operStatus = "+";
             }
             else if (operStatus == "=")
             {
                 ilerhiilel.Clear();
-                //calculator.Add(num);
             }
             else
             {
@@ -52,7 +56,9 @@ namespace calculatorFrom2
             input.Clear();
         }
 
-        // -
+        /// <summary>
+        /// "-" үйлдэл хийх үед дуудна.
+        /// </summary>
         private void hasah_Click(object sender, EventArgs e)
         {
             double num = double.Parse(input.Text);
@@ -64,12 +70,10 @@ namespace calculatorFrom2
             else if (operStatus == "-")
             {
                 calculator.Minus(num);
-                operStatus = "-";
             }
             else if (operStatus == "=")
             {
                 ilerhiilel.Clear();
-                //calculator.Minus(num);
             }
             else
             {
@@ -80,28 +84,30 @@ namespace calculatorFrom2
             input.Clear();
         }
 
-        // =
+        /// <summary>
+        /// "=" товчлуур дарагдах үед үр дүнг тооцоолж харуулна.
+        /// </summary>
         private void tentsuu_Click(object sender, EventArgs e)
         {
             double num = double.Parse(input.Text);
             if (operStatus == "+")
             {
                 calculator.Add(num);
-            } else if (operStatus == "-")
+            }
+            else if (operStatus == "-")
             {
                 calculator.Minus(num);
             }
-            else
-            {
-                //ilerhiilel.Clear();
-            }
-            operStatus = "=";  
+
+            operStatus = "=";
             ilerhiilel.Text += input.Text + "=";
             input.Clear();
             input.Text = calculator.Result.ToString();
         }
 
-        // Clear
+        /// <summary>
+        /// "C" товчлуур дарагдах үед тоон утгууд болон үйлдлийг устгана.
+        /// </summary>
         private void clear_Click(object sender, EventArgs e)
         {
             input.Clear();
@@ -110,18 +116,22 @@ namespace calculatorFrom2
             calculator.resultClear();
         }
 
-        // MS
+        /// <summary>
+        /// "MS" (Memory Save) товчлуур дарагдах үед одоогийн утгыг санах ойд хадгална.
+        /// </summary>
         private void hadgalah_Click(object sender, EventArgs e)
         {
             if (double.TryParse(input.Text, out double num))
             {
                 calculator.Result = num;
-                calculator.Save();
-                addmemoryItemInPanel(calculator.memory.items.Last());
+                MemoryItem memo = calculator.Save();
+                addmemoryItemInPanel(memo);
             }
         }
 
-        // jijig panel
+        /// <summary>
+        /// Санах ойн утгыг харуулах жижиг панель үүсгэнэ.
+        /// </summary>
         private void addmemoryItemInPanel(MemoryItem memoryItem)
         {
             Panel panelItem = new Panel
@@ -129,7 +139,7 @@ namespace calculatorFrom2
                 Size = new Size(280, 50),
                 BackColor = Color.White,
             };
-            
+
             Label label = new Label
             {
                 Text = memoryItem.Value.ToString(),
@@ -140,7 +150,7 @@ namespace calculatorFrom2
                 Tag = memoryItem
             };
 
-            // M+
+            // "M+" товчлуур: хадгалсан утгыг нэмэх
             Button buttonMPlus = CreateButton("M+", () =>
             {
                 if (double.TryParse(input.Text, out double N))
@@ -150,7 +160,7 @@ namespace calculatorFrom2
                 }
             });
 
-            // M-
+            // "M-" товчлуур: хадгалсан утгыг хасах
             Button buttonMMinus = CreateButton("M-", () =>
             {
                 if (double.TryParse(input.Text, out double N))
@@ -160,16 +170,11 @@ namespace calculatorFrom2
                 }
             });
 
-            // MC
+            // "MC" товчлуур: хадгалсан утгыг устгах
             Button buttonMClear = CreateButton("MC", () =>
             {
-                if (double.TryParse(input.Text, out double N))
-                {
-                    history.Controls.Remove(panelItem);
-                    calculator.memory.clearItem(memoryItem);
-                    
-                }
-
+                history.Controls.Remove(panelItem);
+                calculator.memory.clearItem(memoryItem);
                 UpdatePanellocation();
             });
 
@@ -188,6 +193,9 @@ namespace calculatorFrom2
             UpdatePanellocation();
         }
 
+        /// <summary>
+        /// Товчлуур үүсгэх туслах функц.
+        /// </summary>
         private Button CreateButton(string text, Action onClick)
         {
             Button btn = new Button
@@ -200,6 +208,9 @@ namespace calculatorFrom2
             return btn;
         }
 
+        /// <summary>
+        /// Санах ойн панелуудын байршлыг шинэчлэх.
+        /// </summary>
         private void UpdatePanellocation()
         {
             int y = 10;

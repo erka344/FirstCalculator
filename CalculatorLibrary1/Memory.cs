@@ -8,25 +8,29 @@ namespace CalculatorLibrary.memory
 {
     public class Memory
     {
-        public readonly List<MemoryItem> items = new List<MemoryItem> ();
-        public void Tuuh(double value)
-        {
-            items.Add(new MemoryItem (value));
-            // list-ruu tuuh nemeh
-        }
+        /// <summary>
+        /// Санах ойд хадгалах элементүүдийн жагсаалт.
+        /// </summary>
+        public readonly List<MemoryItem> items = new List<MemoryItem>();
+
+
+        /// <summary>
+        /// Санах ойгоос тодорхой нэг элемент устгана.
+        /// </summary>
+        /// <param name="item">Устгах элемент.</param>
         public void clearItem(MemoryItem item)
         {
             items.Remove(item);
         }
-        
+
+        /// <summary>
+        /// Санах ой дахь бүх элементүүдийг буцаана.
+        /// </summary>
+        /// <returns>Санах ойд хадгалагдаж буй бүх элемент.</returns>
         public IEnumerable<MemoryItem> GetAllItems()
         {
             return items;
         }
-        //public MemoryItem? GetLastItem()
-        //// IEnumerable ni C#-nii interface foreach davtaltiig heregledeg
-        //{
-        //    return items.Count> 0 ? items[^1] : null;
-        //}
     }
+
 }
